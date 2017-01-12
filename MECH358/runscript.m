@@ -20,6 +20,13 @@
 % title('Error in exponential function approximation');
 
 %Q2 -  Gaussian elimination with pivoting
+%twoA - twoE
 A = [2 1 0;4 2 1;0 2 4];
-A = [2 1 0 2; 4 2 1 1; 0 2 4 4; 5 6 7 8];
-gElim(A)
+b = [1; 4 ; 14];
+[P, L ,U ] = gElim(A);
+forwardSub(P, L, U, b);
+%twoF
+A = [4 8 12 -8; 1 2 -3 4; 2 3 2 1; -3 -1 1 -4];
+b = [60;3;1;5];
+[P, L ,U ] = gElim(A);
+forwardSub(P, L, U, b);

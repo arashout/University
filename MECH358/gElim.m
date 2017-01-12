@@ -3,7 +3,7 @@
 %Arash Outadi
 
 %Q2 -  Gaussian elimination with pivoting
-function U = gElim(A)
+function [P, L , U] = gElim(A)
     %Assume A is square NxN
     [N,~] = size(A);
     U = A;
@@ -37,7 +37,9 @@ function U = gElim(A)
         end
         c = c + 1;
     end
-    U
-    P
-    L = L + eye(N)
+    L = L + eye(N);
+    %Debugging!
+    %LU = L * U; 
+    %PA = P * A;
+    %Acheck = inv(P) * L * U;
 end

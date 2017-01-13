@@ -21,7 +21,6 @@ function [P, L , U] = gElim(A)
             %Swap rows!
             U([r iMax],:) = U([iMax r],:);
             P([r iMax],:) = P([iMax r],:);
-            %In the first pass nothing is in L, will this be an issue?
             L([r iMax],:) = L([iMax r],:); 
         end
         
@@ -38,8 +37,4 @@ function [P, L , U] = gElim(A)
         c = c + 1;
     end
     L = L + eye(N);
-    %Debugging!
-    %LU = L * U; 
-    %PA = P * A;
-    %Acheck = inv(P) * L * U;
 end

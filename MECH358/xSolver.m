@@ -1,4 +1,4 @@
-function x = forwardSub(P, L, U, b)
+function x = xSolver(P, L, U, b)
     Pb = P * b; %Pb is a vector!!
     z = solveLowerTri(L, Pb);
     x = solveUpperTri(U,z);

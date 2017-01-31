@@ -12,7 +12,7 @@ y(:,1) = y0;
 scaledA = h/2 * A; %I have to repeat this operation a lot
 for i = 1:length(t)-1
     pretend_A = (I - scaledA);
-    pretend_b = (I + scaledA) * y(:,i);
-    y(:, i + 1) = pretend_b' / pretend_A;
+    pretend_b = (I + scaledA) * y(:,n)
+    y(:= pretend_A / b
 end
 end

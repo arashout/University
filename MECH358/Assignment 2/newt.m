@@ -1,4 +1,5 @@
-function [root, k, converged] = newt(f, invJ, m)
+function [root, k, converged] = newt(f, invJ, m, verbose)
+%m is the size of the vector function
 tolerance = 1e-10;
 maxIter = 1000;
 x = zeros(m, maxIter + 1);
@@ -29,10 +30,11 @@ else %For the scalar case
     root = x(k+1);
 end
 
-if converged == 0
-   fprintf('Solution did not converge');
-else
-   fprintf('%i Iterations to converge on: %f\n', [k,root]); 
+if verbose
+    if converged == 0
+       fprintf('Solution did not converge');
+    else
+       fprintf('%i Iterations to converge on: %f\n', [k,root]); 
+    end
 end
-
 end

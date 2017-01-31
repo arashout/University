@@ -10,7 +10,7 @@
 omega = 1;
 kappa = .1;
 h = .1;
-t = 0:h:12;
+t = 0:h:100;
 y0 = [-pi; 1];
 %First method
 figure(1)
@@ -19,7 +19,7 @@ y = crankNichol(A, y0, t);
 plot(t, y(1,:));
 figure(2)
 f = @(y1, y2) y2;
-g = @(y1, y2) -omega^2 * y1 - kappa * y2;
+g = @(y1, y2) -omega^2 * sin(y1) - kappa * y2;
 yRK = rk4Pend(f,g,y0,t);
 plot(t, yRK);
 

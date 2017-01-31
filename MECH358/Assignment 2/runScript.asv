@@ -1,11 +1,6 @@
 %Assignment 1
-num = 20;
-a = randi(num);
-m = randi(num);
-n = randi(num);
-f = @(x) x^m - a^n;
-dfdx = @(x) m * x ^ (m - 1);
-[root, k] = newt(f, dfdx, 1);
+%num = 20;
+%newt(randi(num), randi(num), randi(num));
 %Assignment 2
 omega = 1;
 kappa = .1;
@@ -20,3 +15,9 @@ y0 = [-pi; 1];
 f = @(y1, y2) [y2; -omega^2 * sin(y1) - kappa * y2];
 J = @(y1,y2) [0,1.0;-omega^2*cos(y1),-kappa];
 invJ = @(y1,y2) [-kappa/(omega^2 * cos(y1)), -1/(omega^2 * cos(y1)); 1, 0];
+a = 2;
+m = 2;
+n = 1;
+f = @(x) x^m - a^n;
+dfdx = @(x) m * x ^ (m - 1);
+[root, k] = newtons(f, dfdx, 1);

@@ -1,18 +1,18 @@
 function [y] = crankNichol(A, y0, t)
 %NOTE this is to solve damped pendulam
-I = eye(size(A));
+
+%Setting up values
 h = t(2) - t(1);
-%Solve linear system Ax = b
-%Where 
-%A = (I - h/2 * A)
-%x = y_n+1
-%b = (I + h/2 * A) * y_n
 y = zeros(2,length(t));
 y(:,1) = y0;
-scaledA = h/2 * A; %I have to repeat this operation a lot
-for i = 1:length(t)-1
-    pretend_A = (I - scaledA);
-    pretend_b = (I + scaledA) * y(:,i);
-    y(:, i + 1) = pretend_b' / pretend_A;
+%For convinience
+scaledA = h/2 * A;
+I = eye(size(A));
+
+sigma = inv((I - scaledA)) * (I + scaledA);
+
+for n = 1:length(t)-1
+    y(:,n+1) = sigma * y(:,n);
 end
+
 end

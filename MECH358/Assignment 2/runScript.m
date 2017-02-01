@@ -13,14 +13,16 @@ h = .1;
 t = 0:h:100;
 y0 = [-pi; 1];
 %First method
-figure(1)
 A = [0, 1; -omega^2, -kappa];
 y = crankNichol(A, y0, t);
+figure(1)
 plot(t, y(1,:));
+
+
+f1 = @(y1, y2) y2;
+f2 = @(y1, y2) -omega^2 * sin(y1) - kappa * y2;
+yRK = rk4Pend(f1,f2,y0,t);
 figure(2)
-f = @(y1, y2) y2;
-g = @(y1, y2) -omega^2 * sin(y1) - kappa * y2;
-yRK = rk4Pend(f,g,y0,t);
 plot(t, yRK);
 
 % %Non-linear crank-nicholson

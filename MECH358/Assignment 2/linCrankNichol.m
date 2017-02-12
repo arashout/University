@@ -1,4 +1,4 @@
-function [y] = crankNichol(A, y0, t)
+function [y] = linCrankNichol(A, y0, t)
 %NOTE this is to solve damped pendulam
 
 %Setting up values

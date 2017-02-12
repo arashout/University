@@ -1,0 +1,38 @@
+runScript
+
+Assignment 1
+
+a =
+
+    20
+
+
+m =
+
+    20
+
+
+n =
+
+     4
+
+
+f = 
+
+    @(x)x^m-a^n
+
+
+dfdx = 
+
+    @(x)m*x^(m-1)
+
+
+root =
+
+    1.8206
+
+
+k =
+
+   180
+

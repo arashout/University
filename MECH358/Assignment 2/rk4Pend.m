@@ -9,7 +9,7 @@ z = zeros(1, n);
 y(1) = initV(1);
 z(1) = initV(2);
 
-for i = 1:length(t)-1
+for i = 1:length(t) - 1
     k0 = h * f1(y(i), z(i) );
     l0 = h * f2(y(i), z(i) );
     

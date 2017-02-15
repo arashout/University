@@ -1,4 +1,4 @@
-function [y] = rk2Pend(f1, f2, initV, t)
+function [y,z] = rk2Pend(f1, f2, initV, t)
 h = t(2) - t(1);
 %Sizes for convenience
 n = length(t);

@@ -19,11 +19,11 @@ xlabel('x');
 ylabel('T');
 hold on
 %Question 2
-
 %Create convience functions
 gamma = @(x) 1/h^2 - a(x)/(2*h);
 beta = @(x) b(x) - 2/h^2;
 alpha = @(x) 1/h^2 + a(x)/(2*h);
 TFinite = finiteDiffDirichlet(gamma, beta, alpha, f, TA(1), TB(1), xspan);
 plot(xspan,TFinite);
+legend('Shooting Method','Finite Differences')
 hold off

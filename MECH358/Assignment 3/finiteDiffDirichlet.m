@@ -21,4 +21,4 @@ for i = 2:N-1
     xi = x(i);
     f(i) = g(xi);
 end
-y = inv(A)*f;
+y = A\f;

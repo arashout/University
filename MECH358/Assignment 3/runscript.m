@@ -13,7 +13,7 @@ xspan = TA(2):h:TB(2);
 %Question 1
 [TShoot, Tprime] = shootingMethod2ndOrder(f1, f2, TA(1), TB(1), xspan);
 figure(1)
-plot(xspan,TShoot);
+plot(xspan,TShoot,'g*');
 title('T vs x');
 xlabel('x');
 ylabel('T');

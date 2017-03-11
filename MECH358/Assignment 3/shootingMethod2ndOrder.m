@@ -21,7 +21,7 @@ ul = u(end);
 %Note: That you need 2 guesses and 2 resulting BC
 
 %Guess 1
-v(1) = rand;
+v(1) = .1;
 initV = [u(1), v(1)]; %Initial Conditions
 [u, v] = rk4Pend(f1, f2, initV , x);
 v01 = v(1); %first guess

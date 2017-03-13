@@ -4,8 +4,8 @@ class LabData(object):
     def __init__(self, trial, location, dbTemp, wbTemp):
     	self.trial = trial
     	self.location = location
-        self.dbTemp = dbTemp;
-        self.wbTemp = wbTemp;
+        self.dbTemp = dbTemp
+        self.wbTemp = wbTemp
         self.W = None
         self.RH = None
         self.specificVolume = None

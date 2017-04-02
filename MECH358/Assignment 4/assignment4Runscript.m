@@ -1,7 +1,7 @@
 path = 'C:\Users\arash\OneDrive\MECHYearThree\MECH358\Homework\';
 %Q1
-%f = @(x) x;
-f = @(x) x.^2;
+f = @(x) x;
+%f = @(x) x.^2;
 %f = @(x) x.^2.*(2.*x-3);
 x0 = 0;
 xL = 1;

@@ -12,7 +12,7 @@ N = 1000;
 res = 100;
 
 t = tau_D * [0, 1e-2, 1e-1, 1, 1e1, 1e3];
-x = linspace(0,L,res);
+x = linspace(0,L,res)';
 
 %Convenience functions
 yn = @(n) (n*pi/L)^2; %Lambda LOL
@@ -36,11 +36,8 @@ figure(1)
 for curT = t 
     %Make accumalator
     T = zeros(res, 1);
-
-    for i = 1:res
-        for n = 1:N
-            T(i) = T(i) + generalT(n, x(i), curT);
-        end
+    for n = 1:N
+        T = T + generalT(n, x, curT);
     end
     plot(x, T);
     hold on
@@ -49,8 +46,8 @@ end
 hold off
 titleString = sprintf('T at different times with parameters N=%d h=1/%d',N,length(x));
 title(titleString)
-xlabel('x')
-ylabel('T')
+xlabel('x[m]')
+ylabel('T[K]')
 tLabels = cell(6, 1);
 for i = 1:6
     tLabels{i} = strcat('t=',num2str(t(i)));

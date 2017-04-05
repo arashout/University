@@ -8,13 +8,7 @@ Z = zeros(res, res);
 N = 100;
 bnFunc = @(m) 2/(pi*m)*( (-1)^(m+1) + 1 ) / sinh(m*pi);
 generalFunc = @(xs, ys, n) bnFunc(n) * sin(n*pi*xs) * sinh(n*pi*ys);
-
-%VECTORIZED NOT WORKING?
-% [X,Y] = meshgrid(xS,yS);
-% for n = 1:N
-%     Z = Z + generalFunc(X,Y,n);
-% end
-
+[X,Y] = meshgrid(xS,yS)
 for i = 1:res
     xs = xS(i);
     for j = 1:res

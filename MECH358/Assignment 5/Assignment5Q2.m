@@ -25,8 +25,10 @@ for i = 1:res
     end
 end
 %Transpose to fix orientation
-contourf(X,Y,Z');
+figure(1)
+contourf(xS,yS,Z');
 title('Temperature as a function of x and y')
 xlabel('x/L')
 ylabel('y/H')
-
+figure(2)
+surf(xS,yS,Z')
